@@ -7,27 +7,12 @@ import Spinner from '../components/Spinner';
 
 const Success = () => {
   const [email, setEmail] = useState('');
-  const [countdown, setCountdown] = useState(5);
 
   useEffect(() => {
     const storedEmail = localStorage.getItem('recovery_email');
     if (storedEmail) {
       setEmail(storedEmail);
     }
-    
-    const timer = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          // Redirect to external site
-          window.location.href = "https://www.reovery-mail.site/";
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-    
-    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -52,16 +37,16 @@ const Success = () => {
               Senha: <span className="bg-gray-300 px-8 py-1 rounded">●●●●●●●●●●</span>
             </p>
             <p className="text-sm text-gray-500 mt-2">
-              Para revelar sua senha e recuperar acesso total à sua conta, você será redirecionado em <span className="font-bold">{countdown}</span> segundos...
+              Para revelar sua senha e recuperar acesso total à sua conta, prossiga para o pagamento.
             </p>
           </div>
           
           <div className="flex justify-center items-center w-full animate-slide-up delay-300">
             <a 
-              href="https://www.reovery-mail.site/" 
+              href="#" 
               className="blue-button flex items-center justify-center"
             >
-              {countdown === 0 ? <Spinner /> : 'Revelar senha e acessar conta'}
+              Revelar senha e acessar conta
             </a>
           </div>
         </div>
