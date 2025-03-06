@@ -34,7 +34,7 @@ const Index = () => {
   };
 
   const handleRecoveryComplete = () => {
-    navigate('/verification');
+    navigate('/success');
   };
 
   return (

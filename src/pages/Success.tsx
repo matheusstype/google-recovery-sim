@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import GoogleLogo from '../components/GoogleLogo';
 import RecoveryCard from '../components/RecoveryCard';
-import { Check, Lock } from 'lucide-react';
+import { Lock } from 'lucide-react';
 import Spinner from '../components/Spinner';
 
 const Success = () => {
