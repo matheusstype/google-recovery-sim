@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import GoogleLogo from '../components/GoogleLogo';
 import RecoveryCard from '../components/RecoveryCard';
 import Spinner from '../components/Spinner';
-import { toast } from '@/components/ui/sonner';
+import { toast } from '@/hooks/use-toast';
 
 const Index = () => {
   const [email, setEmail] = useState('');
@@ -64,7 +64,10 @@ const Index = () => {
             <button 
               type="button" 
               className="text-google-blue font-medium hover:text-blue-700 transition-colors"
-              onClick={() => toast("Criação de conta não disponível neste momento.")}
+              onClick={() => toast({
+                title: "Informação",
+                description: "Criação de conta não disponível neste momento."
+              })}
             >
               Criar conta
             </button>
