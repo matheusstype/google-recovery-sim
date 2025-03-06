@@ -17,8 +17,8 @@ const RecoveryProcess = ({ onComplete }: { onComplete: () => void }) => {
     { label: 'Verificando endereço de e-mail', duration: 4000, status: 'pending' },
     { label: 'Buscando informações da conta', duration: 6000, status: 'pending' },
     { label: 'Verificando histórico de segurança', duration: 5000, status: 'pending' },
-    { label: 'Preparando código de recuperação', duration: 5000, status: 'pending' },
-    { label: 'Enviando código para seu e-mail', duration: 5000, status: 'pending' },
+    { label: 'Gerando senha temporária', duration: 5000, status: 'pending' },
+    { label: 'Preparando recuperação da conta', duration: 5000, status: 'pending' },
   ];
 
   useEffect(() => {
