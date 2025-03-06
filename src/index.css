@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 217 89% 60%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +91,85 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
   }
+}
+
+.google-logo {
+  @apply flex;
+}
+
+.google-logo span {
+  @apply text-2xl font-medium;
+}
+
+.google-logo span:nth-child(1) {
+  @apply text-google-blue;
+}
+
+.google-logo span:nth-child(2) {
+  @apply text-google-red;
+}
+
+.google-logo span:nth-child(3) {
+  @apply text-google-yellow;
+}
+
+.google-logo span:nth-child(4) {
+  @apply text-google-blue;
+}
+
+.google-logo span:nth-child(5) {
+  @apply text-google-green;
+}
+
+.google-logo span:nth-child(6) {
+  @apply text-google-red;
+}
+
+.recovery-card {
+  @apply w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out animate-fade-in;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recovery-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blue-button {
+  @apply bg-google-blue text-white px-6 py-2 rounded-md font-medium transition-all duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 animate-slide-up transition-all duration-200;
+}
+
+.input-field:focus {
+  @apply border-google-blue;
+}
+
+.back-button {
+  @apply flex items-center text-google-blue font-medium transition-all duration-200 hover:text-blue-700;
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
 }
